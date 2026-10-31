@@ -1,0 +1,8 @@
+CONFIDENTIAL - END SEMESTER EXAMINATION
+Course: Applied Cryptography    Max marks: 100    Duration: 3 hrs
+
+Q1. (10) Explain why AES-GCM requires a unique nonce per key.
+Q2. (15) Compare RSA-OAEP with textbook RSA encryption.
+Q3. (15) Describe how RSA-PSS differs from PKCS#1 v1.5 signatures.
+Q4. (20) Design a hybrid scheme for confidential file transfer.
+Q5. (40) Analyse the attacks possible on an unauthenticated channel.

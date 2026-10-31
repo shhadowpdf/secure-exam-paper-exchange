@@ -1,0 +1,16 @@
+# Generated sender, recipient, channel, and attacker keys/packages
+simulation/
+
+# Private keys and secret configuration
+*_private.pem
+*_private.key
+*.p12
+*.pfx
+.env
+.env.*
+
+# Python-generated files and local environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/

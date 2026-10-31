@@ -1,0 +1,79 @@
+========================================================================
+SECURE EXAMINATION-PAPER EXCHANGE - SIMULATION
+========================================================================
+
+[Setup] Generating RSA-4096 key pairs (this takes a few seconds each)...
+  sender    : simulation\run_6c01ea7b\sender\faculty_private.pem (passphrase-encrypted PEM)
+  recipient : simulation\run_6c01ea7b\recipient\coordinator_private.pem (passphrase-encrypted PEM)
+  attacker  : simulation\run_6c01ea7b\attacker\attacker_private.pem
+  Public keys exchanged via trusted channel (copied between folders).
+
+[Input] simulation\run_6c01ea7b\sender\exam_paper.txt  (433 bytes)  SHA-256 = a2f304a273bd5a548c8c59085968f3d87fec02fb6d27b798148bfe4efccd0329
+
+------------------------------------------------------------------------
+TEST 1: Authorised recipient recovers the original file
+------------------------------------------------------------------------
+  [PASS] Decrypt + verify with correct keys
+         -> ACCEPTED  sender=faculty  SHA-256=a2f304a273bd5a548c8c59085968f3d87fec02fb6d27b798148bfe4efccd0329  identical_to_original=True
+  Ciphertext in channel does not contain plaintext: True
+
+------------------------------------------------------------------------
+TEST 2: Attacker modifies ciphertext / metadata / signature (and other fields)
+------------------------------------------------------------------------
+  [PASS] Flip 1 bit in ciphertext
+         -> REJECTED  SignatureVerificationError: Signature verification FAILED: package was altered or was not signed by the trusted sender.
+  [PASS] Change metadata (recipient -> 'attacker')
+         -> REJECTED  SignatureVerificationError: Signature verification FAILED: package was altered or was not signed by the trusted sender.
+  [PASS] Change metadata (filename)
+         -> REJECTED  SignatureVerificationError: Signature verification FAILED: package was altered or was not signed by the trusted sender.
+  [PASS] Flip 1 bit in signature
+         -> REJECTED  SignatureVerificationError: Signature verification FAILED: package was altered or was not signed by the trusted sender.
+  [PASS] Flip 1 bit in GCM tag
+         -> REJECTED  SignatureVerificationError: Signature verification FAILED: package was altered or was not signed by the trusted sender.
+  [PASS] Flip 1 bit in nonce
+         -> REJECTED  SignatureVerificationError: Signature verification FAILED: package was altered or was not signed by the trusted sender.
+  [PASS] Flip 1 bit in wrapped session key
+         -> REJECTED  SignatureVerificationError: Signature verification FAILED: package was altered or was not signed by the trusted sender.
+  [PASS] Truncate package (drop signature field)
+         -> REJECTED  PackageFormatError: Malformed package: unexpected or missing field.
+  [PASS] Reject correctly signed package addressed to another recipient
+         -> REJECTED  PackageFormatError: Package addressed to 'another-coordinator', not 'coordinator'.
+  [PASS] Tamper + re-sign with attacker's own key
+         -> REJECTED  SignatureVerificationError: Signature verification FAILED: package was altered or was not signed by the trusted sender.
+  [PASS] Replace package with attacker-forged one
+         -> REJECTED  SignatureVerificationError: Signature verification FAILED: package was altered or was not signed by the trusted sender.
+
+------------------------------------------------------------------------
+TEST 3: Recipient attempts decryption with an incorrect private key
+------------------------------------------------------------------------
+  [PASS] Decrypt using attacker's private key (signature itself is valid)
+         -> REJECTED  KeyUnwrapError: Session-key recovery FAILED: this private key is not the intended recipient's.
+  [PASS] Decrypt using a different freshly generated RSA-4096 key
+         -> REJECTED  KeyUnwrapError: Session-key recovery FAILED: this private key is not the intended recipient's.
+  [PASS] Private-key file with wrong passphrase
+         -> REJECTED  ValueError: incorrect passphrase or invalid key file
+
+------------------------------------------------------------------------
+TEST 4: Signature verification with an incorrect sender public key
+------------------------------------------------------------------------
+  [PASS] Verify using attacker's public key instead of faculty's
+         -> REJECTED  SignatureVerificationError: Signature verification FAILED: package was altered or was not signed by the trusted sender.
+  [PASS] Verify using recipient's own public key as sender key
+         -> REJECTED  SignatureVerificationError: Signature verification FAILED: package was altered or was not signed by the trusted sender.
+
+------------------------------------------------------------------------
+TEST 5: Same file encrypted twice -> different packages
+------------------------------------------------------------------------
+  encrypted_session_key  differs between runs: True
+  nonce                  differs between runs: True
+  ciphertext             differs between runs: True
+  tag                    differs between runs: True
+  signature              differs between runs: True
+  package_id differs: True
+  [PASS] All security-relevant fields differ; both still decrypt:
+         package A -> plaintext identical to original: True
+         package B -> plaintext identical to original: True
+
+========================================================================
+SUMMARY: 18/18 checks passed
+========================================================================

@@ -1,0 +1,20 @@
+{
+  "metadata": {
+    "version": 1,
+    "package_id": "d0208170-c28b-4369-8329-8607a6d76cd2",
+    "filename": "exam_paper.txt",
+    "sender": "faculty",
+    "recipient": "coordinator",
+    "created_utc": 1793466217,
+    "algorithms": {
+      "key_exchange": "RSA-4096-OAEP-MGF1-SHA256",
+      "bulk_cipher": "AES-256-GCM",
+      "signature": "RSA-4096-PSS-MGF1-SHA256"
+    }
+  },
+  "encrypted_session_key": "XIAZwF1m9b3PYy8j+K0tyJ2b3FtUn31z5zPXcSrZAWrzhnYpV6wiGf+VTSmuwfsVZNgunXS39I9gNi1oE/95IwiUR6m4IkrXI7DJ1r9QxXgyGuagV+5pTl6KwNCbEPU0l2u5n1bA1dVXJmKHIKz3jDqKeqAxsmHwJhFLQSuzTePQbayUKVO2OXyp4v9+l20xqGqBpPO6IiuolhnkwsQ2xoOwZJJURNAM9QnXp42Q+OrTKKwbgyLhWXE8zctnE4QP/UVC8hXDlZjeMR66eO+ysuQAiRuPmZstHaKmdsTdcafZhVoSVzh0JyKTslNaYRw/esaDnzucF1M8Avn3coVv6Ue+oUDypQihyTa3pihrcqmaUsOVZ+UblBLGsLo33Tc9JEM1UWjKM3wOJoVAAUH2BOthvrQtt4y2ERAdXPH3L9PHqu8BABgNnNqDklFS+XXofkgD9eHv5R8sBdMRgu3ZTqiHiHKEo53Z/0WTcTPruPtKYAMYP7OVWAVOu7UvGY/lbQ83grelBd3JSLykaWbiRhw9Gur+mQf47Le4Yle+GEwOMNFNoLKyGvqzIh0O1I4vT22gSfa6i8IxfIS79Vst2xKVzgnPwEgnoHGztiMw1QfQhf4z23o/OV/5o+JyJiASYzA+ht/eBFLEewxeQfQVwN5km0vHQwuPwCebnZRQhpI=",
+  "nonce": "8MGFMgvEaUGNgsTs",
+  "ciphertext": "IefisggraMQwFKAVB0RqI6MIZrHoOqyg51SPKPeqsjbN7nVikf0ncjrsO96OplQrPBZmNb1oobcDaQoVTDBkd9aJNNWAwXefoZc92CNokwnBwTLsVKarfh+OUBgPT3Aw7X5lq3zlhL9rAu7etKNfsCl17mWX8pTNh0Np1XomDhF97sB605kI46hY+KnvAq3rcKKVp7dX38VN8UA6UI0fcVuX3vH1Vx2EntYLkYy9Fb/4ZeQ0KTwipQsvUGHA0YMQGahjOVE132LKU2WUEDIZGdt5qwS5yjHfeaquDu+N3rXd6v/rFCQ28AiBLa8R1bDiTHhzYWmlVv7+0qeZEiM5eXVpqFccwyGTbhv5sDBUolmFOLlk2Z1Ng/SFIjStZQf/AbEsi4xeEbcnkQzSeViygvlbd/Ws7KwcsWQ6bkFByNERSwTYnHHTILYgbylDfbbohwuicly2lyYMJSXgmfFYzoIe67JnU9khtHcx19Hfi4KWVGdl5hurF2on11L3PnAcy9VxQcVoIysUAScuGgRP4k6fGfRcX5WadVqz7zF6UGhn7wnukWAR3NIryAMSak7m1g==",
+  "tag": "1ViQkgAlu2hI0tXOUcvVUw==",
+  "signature": "gW6UAXD7U0AeGI2O7JwtU9zVmC4TocMoljgKq1fp4b2maSkd2bEFPZmxiPKvW+i6/rc2FtWEn/cZNZQ+yefwgBXlGg4m/F4ONDKnUCdACZ4etw451wAGdlhk7MPDxZ6myWBORQx3A4WXDRhw/gdNW2JrJ+O8tUm5d8NwQbeJGcEQ8/lwReXaOi7chKuncbhlCX9UJw52CsFy7WIQVJNY1tZkawtXPIZmon9iUdLnlJR3O5ZggLY/Y+okccD+0sjhANOzDVqFLyw3KwYO8vQd4YXkie4GQUFdzc22zclJv0rd3ikB6JOuevq/g4qdkCxq94YRM5+28jcGzhVeD86YhkcX9/FEureqqij9oPOgc0f3AjeomAi5c6AnMK3TIsy6HajeQUPkqPYwrhwylwn/32nsRnctzRDBk+nvSg2K+M2L7uOGkMu/PhBfTDE/wPBo/GNR7csk6N0vzaAGYL/juZzVFbWSVtQUPMvdbRh1RMyh19GsfrVf86m2/J3gAUVZRq+BCtSd0agVtI1/+mBWr7OihgmoMjBYHCcNJjCeOxK5eYF2b7szHuU8spILveUCw+MMhOKph8Vgu0ftoXdtcuH6hBFcjKaLXnkB7OZmTC5giB48gpJubI+l6dFU92j9yywLBnZSeKtjMokna+f/12KQMrR3Z2DrOb2BjIb+CrQ="
+}
